@@ -7,15 +7,9 @@ COPY ./etc /requirements
 RUN pip install --upgrade pip
 RUN pip install -r /requirements/requirements.txt
 
-COPY . /bots
+COPY src/ /bots
+COPY scripts/ /bots
 WORKDIR /bots
 
-RUN pip install /bots
-RUN mkdir /usr/local/lib/python3.4/site-packages/bots/botssys
-RUN mkdir /usr/local/lib/python3.4/site-packages/bots/botssys/sqlitedb
-COPY ./src/bots/install/bots.ini /usr/local/lib/python3.4/site-packages/bots/config/
-COPY ./src/bots/install/settings.py /usr/local/lib/python3.4/site-packages/bots/config/
-COPY ./src/bots/install/botsdb /usr/local/lib/python3.4/site-packages/bots/botssys/sqlitedb/
-
-CMD [ "python", "-u", "/usr/local/bin/bots-webserver.py" ]
-EXPOSE 8080
+CMD [ "python", "-u", "bots-webserver.py" ]
+EXPOSE 9000
