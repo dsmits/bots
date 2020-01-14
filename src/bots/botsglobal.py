@@ -3,8 +3,10 @@
 from __future__ import unicode_literals
 import pkg_resources
 
-#Globals used by Bots
-version = pkg_resources.get_distribution('bots').version  # bots version
+# Globals used by Bots
+# TODO: Add back functionality to determine version if it is important
+# version = pkg_resources.get_distribution('bots').version  # bots version
+version = '1.0'
 db = None  # db-object
 ini = None  # ini-file-object that is read (bots.ini)
 logger = None  # logger or bots-engine

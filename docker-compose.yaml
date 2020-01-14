@@ -9,4 +9,4 @@ services:
       context: .
       dockerfile: ./compose/bots_py34/Dockerfile
     ports:
-      - "0.0.0.0:8080:8080"
+      - "0.0.0.0:9000:9000"
