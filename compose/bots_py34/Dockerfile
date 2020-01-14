@@ -8,7 +8,6 @@ RUN pip install --upgrade pip
 RUN pip install -r /requirements/requirements.txt
 
 COPY src/ /bots
-COPY scripts/ /bots
 WORKDIR /bots
 
 CMD [ "python", "-u", "bots-webserver.py" ]
