@@ -1,0 +1,4 @@
+LOAD DATABASE
+    FROM 'botsdb'
+    INTO pgsql://bots:botsbots@db:5432/botsdb
+    ALTER schema 'main' rename to 'public';

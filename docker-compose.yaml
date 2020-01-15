@@ -1,12 +1,33 @@
-version: '2'
-
-# Database by SQLITE
-# Config settings copied from install
+version: '3.4'
 
 services:
   bots34:
+    depends_on:
+      - db
     build:
       context: .
       dockerfile: ./compose/bots_py34/Dockerfile
     ports:
-      - "0.0.0.0:9000:9000"
+      - 9000:9000
+
+  db:
+    image: postgres
+    environment:
+      POSTGRES_DB: "${DB_NAME}"
+      POSTGRES_USER: "${USER_NAME}"
+      POSTGRES_PASSWORD: "${USER_PASSWORD}"
+    ports:
+      - 5432:5432
+
+  migrate:
+    depends_on:
+      - db
+    build:
+      context: ./database
+    environment:
+      DB_HOST: "db"
+      DB_PORT: "5432"
+      DB_USER: "${USER_NAME}"
+      DB_PASSWORD: "${USER_PASSWORD}"
+      DB_NAME: "${DB_NAME}"
+    command: ["./wait-for-it.sh", "db:5432", "--", "./entrypoint.sh"]
