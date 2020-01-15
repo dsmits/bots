@@ -1,0 +1,5 @@
+LOAD DATABASE
+    FROM 'botsdb'
+    INTO pgsql://bots:botsbots@db:5432/botsdb
+    ALTER schema 'main' rename to 'public'
+    CAST type datetime    to timestamptz using sqlite-timestamp-to-timestamp;
