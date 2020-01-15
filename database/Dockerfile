@@ -13,5 +13,6 @@ RUN apt-get install -y postgresql-client
 
 COPY . /data
 WORKDIR /data/
+RUN chmod +x ./wait-for-it.sh
 
-CMD pgloader -d load && psql postgresql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME} < migrations/001_fix_primary_keys.sql
+CMD ./entrypoint.sh

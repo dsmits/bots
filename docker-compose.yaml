@@ -30,3 +30,4 @@ services:
       DB_USER: "${USER_NAME}"
       DB_PASSWORD: "${USER_PASSWORD}"
       DB_NAME: "${DB_NAME}"
+    command: ["./wait-for-it.sh", "db:5432", "--", "./entrypoint.sh"]

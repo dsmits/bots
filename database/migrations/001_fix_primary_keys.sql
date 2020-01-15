@@ -12,5 +12,4 @@ create sequence if not exists django_content_type_id_seq; alter table django_con
 create sequence if not exists partnergroup_id_seq; alter table partnergroup alter column id set default nextval('partnergroup_id_seq'); alter sequence partnergroup_id_seq owned by partnergroup.id;
 create sequence if not exists routes_id_seq; alter table routes alter column id set default nextval('routes_id_seq'); alter sequence routes_id_seq owned by routes.id;
 create sequence if not exists translate_id_seq; alter table translate alter column id set default nextval('translate_id_seq'); alter sequence translate_id_seq owned by translate.id;
-create sequence if not exists ta_id_seq; alter table ta alter column idta set default nextval('ta_id_seq'); alter sequence ta_id_seq owned by ta.idta;
-
+create sequence if not exists ta_id_seq minvalue 0; alter table ta alter column idta set default nextval('ta_id_seq'); alter sequence ta_id_seq owned by ta.idta;
