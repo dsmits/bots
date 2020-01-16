@@ -1,14 +1,16 @@
 FROM python:3.4
 
 ENV PYTHONUNBUFFERED 1
+ENV PYTHONPATH /app/src
 
 COPY ./etc /requirements
 
 RUN pip install --upgrade pip
 RUN pip install -r /requirements/requirements.txt
 
-COPY src/ /bots
-WORKDIR /bots
+COPY src/ /app/src
+COPY plugins /app/plugins
+WORKDIR /app
 
-CMD [ "python", "-u", "bots-webserver.py" ]
+CMD [ "python", "-u", "src/bots-webserver.py" ]
 EXPOSE 9000
