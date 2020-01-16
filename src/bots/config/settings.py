@@ -52,7 +52,7 @@ DATABASES = {
         'NAME': 'botsdb',
         'USER': 'bots',
         'PASSWORD': 'botsbots',
-        'HOST': 'localhost',
+        'HOST': os.getenv('DB_HOST', 'localhost'),
         'PORT': '5432',
         'OPTIONS': {},
         }
