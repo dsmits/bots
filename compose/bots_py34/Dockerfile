@@ -9,7 +9,6 @@ RUN pip install --upgrade pip
 RUN pip install -r /requirements/requirements.txt
 
 COPY src/ /app/src
-COPY plugins /app/plugins
 WORKDIR /app
 
 CMD [ "python", "-u", "src/bots-webserver.py" ]
