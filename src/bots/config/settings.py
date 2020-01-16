@@ -52,7 +52,7 @@ DATABASES = {
         'NAME': 'botsdb',
         'USER': 'bots',
         'PASSWORD': 'botsbots',
-        'HOST': 'db',
+        'HOST': 'localhost',
         'PORT': '5432',
         'OPTIONS': {},
         }
