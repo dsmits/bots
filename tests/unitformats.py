@@ -1192,7 +1192,7 @@ class TestFormatFieldInmessage(unittest.TestCase):
         #need to have a inmessage-object for tests. Read is a edifile and a grammar.
         self.edi = inmessage.parse_edi_file(frompartner='',
                                             topartner='',
-                                            filename='botssys/infile/unitformats/formats01.edi',
+                                            filename='bots/botssys/infile/unitformats/formats01.edi',
                                             messagetype='edifact',
                                             testindicator='0',
                                             editype='edifact',

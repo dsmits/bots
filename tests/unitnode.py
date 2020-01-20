@@ -42,9 +42,9 @@ class Testnode(unittest.TestCase):
 
     def testedifact01(self):
         inn = inmessage.parse_edi_file(editype='edifact', messagetype='invoicwithenvelope',
-                                       filename='botssys/infile/unitnode/nodetest01.edi')
+                                       filename='bots/botssys/infile/unitnode/nodetest01.edi')
         out = outmessage.outmessage_init(editype='edifact', messagetype='invoicwithenvelope',
-                                         filename='botssys/infile/unitnode/output/inisout03.edi', divtext='', topartner='')  # make outmessage object
+                                         filename='bots/botssys/infile/unitnode/output/inisout03.edi', divtext='', topartner='')  # make outmessage object
         out.root = inn.root
 
         #* getloop **************************************
@@ -164,7 +164,7 @@ class Testnode(unittest.TestCase):
         #~ #display query correct? incluuding propagating 'down the tree'?
         node.Node.fetchqueries = fetchqueries
         inn = inmessage.parse_edi_file(editype='edifact', messagetype='edifact',
-                                       filename='botssys/infile/unitnode/0T0000000015.edi')
+                                       filename='bots/botssys/infile/unitnode/0T0000000015.edi')
         inn.root.processqueries({}, 2)
         inn.root.fetchqueries()
         #~ print collectqueries
