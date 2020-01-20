@@ -38,108 +38,108 @@ class TestInmessage_xml(unittest.TestCase):
     def testxml(self):
         #~ #empty file
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='xmlnocheck',
-                          messagetype='xmlnocheck', filename='botssys/infile/unitinmessagexml/xml/110401.xml')
+                          messagetype='xmlnocheck', filename='bots/botssys/infile/unitinmessagexml/xml/110401.xml')
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='xml',
-                          messagetype='testxml', filename='botssys/infile/unitinmessagexml/xml/110401.xml')
+                          messagetype='testxml', filename='bots/botssys/infile/unitinmessagexml/xml/110401.xml')
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='xml', messagetype='testxml',
-                          checkunknownentities=True, filename='botssys/infile/unitinmessagexml/xml/110401.xml')
+                          checkunknownentities=True, filename='bots/botssys/infile/unitinmessagexml/xml/110401.xml')
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='xml',
-                          messagetype='testxmlflatten', filename='botssys/infile/unitinmessagexml/xml/110401.xml')
+                          messagetype='testxmlflatten', filename='bots/botssys/infile/unitinmessagexml/xml/110401.xml')
         #only root record in 110402.xml
         self.failUnless(inmessage.parse_edi_file(editype='xmlnocheck', messagetype='xmlnocheck',
-                                                 filename='botssys/infile/unitinmessagexml/xml/110402.xml'), 'only a root tag; should be OK')
+                                                 filename='bots/botssys/infile/unitinmessagexml/xml/110402.xml'), 'only a root tag; should be OK')
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='xml',
-                          messagetype='testxml', filename='botssys/infile/unitinmessagexml/xml/110402.xml')
+                          messagetype='testxml', filename='bots/botssys/infile/unitinmessagexml/xml/110402.xml')
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='xml', messagetype='testxml',
-                          checkunknownentities=True, filename='botssys/infile/unitinmessagexml/xml/110402.xml')
+                          checkunknownentities=True, filename='bots/botssys/infile/unitinmessagexml/xml/110402.xml')
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='xml',
-                          messagetype='testxmlflatten', filename='botssys/infile/unitinmessagexml/xml/110402.xml')
+                          messagetype='testxmlflatten', filename='bots/botssys/infile/unitinmessagexml/xml/110402.xml')
 
         #root tag different from grammar
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='xml',
-                          messagetype='testxml', filename='botssys/infile/unitinmessagexml/xml/110406.xml')
+                          messagetype='testxml', filename='bots/botssys/infile/unitinmessagexml/xml/110406.xml')
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='xml', messagetype='testxml',
-                          checkunknownentities=True, filename='botssys/infile/unitinmessagexml/xml/110406.xml')
+                          checkunknownentities=True, filename='bots/botssys/infile/unitinmessagexml/xml/110406.xml')
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='xml',
-                          messagetype='testxmlflatten', filename='botssys/infile/unitinmessagexml/xml/110406.xml')
+                          messagetype='testxmlflatten', filename='bots/botssys/infile/unitinmessagexml/xml/110406.xml')
         #root tag is double
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='xmlnocheck',
-                          messagetype='xmlnocheck', filename='botssys/infile/unitinmessagexml/xml/110407.xml')
+                          messagetype='xmlnocheck', filename='bots/botssys/infile/unitinmessagexml/xml/110407.xml')
         #invalid: no closing tag
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='xmlnocheck',
-                          messagetype='xmlnocheck', filename='botssys/infile/unitinmessagexml/xml/110408.xml')
+                          messagetype='xmlnocheck', filename='bots/botssys/infile/unitinmessagexml/xml/110408.xml')
         #invalid: extra closing tag
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='xmlnocheck',
-                          messagetype='xmlnocheck', filename='botssys/infile/unitinmessagexml/xml/110409.xml')
+                          messagetype='xmlnocheck', filename='bots/botssys/infile/unitinmessagexml/xml/110409.xml')
         #invalid: mandatory xml-element missing
         self.failUnless(inmessage.parse_edi_file(editype='xmlnocheck', messagetype='xmlnocheck',
-                                                 filename='botssys/infile/unitinmessagexml/xml/110410.xml'), '')
+                                                 filename='bots/botssys/infile/unitinmessagexml/xml/110410.xml'), '')
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='xml',
-                          messagetype='testxml', filename='botssys/infile/unitinmessagexml/xml/110410.xml')
+                          messagetype='testxml', filename='bots/botssys/infile/unitinmessagexml/xml/110410.xml')
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='xml', messagetype='testxml',
-                          checkunknownentities=True, filename='botssys/infile/unitinmessagexml/xml/110410.xml')
+                          checkunknownentities=True, filename='bots/botssys/infile/unitinmessagexml/xml/110410.xml')
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='xml',
-                          messagetype='testxmlflatten', filename='botssys/infile/unitinmessagexml/xml/110410.xml')
+                          messagetype='testxmlflatten', filename='bots/botssys/infile/unitinmessagexml/xml/110410.xml')
 
         #invalid: to many occurences
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='xml',
-                          messagetype='testxml', filename='botssys/infile/unitinmessagexml/xml/110411.xml')
+                          messagetype='testxml', filename='bots/botssys/infile/unitinmessagexml/xml/110411.xml')
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='xml', messagetype='testxml',
-                          checkunknownentities=True, filename='botssys/infile/unitinmessagexml/xml/110411.xml')
+                          checkunknownentities=True, filename='bots/botssys/infile/unitinmessagexml/xml/110411.xml')
 
         #invalid: missing mandatory xml attribute
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='xml',
-                          messagetype='testxml', filename='botssys/infile/unitinmessagexml/xml/110412.xml')
+                          messagetype='testxml', filename='bots/botssys/infile/unitinmessagexml/xml/110412.xml')
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='xml', messagetype='testxml',
-                          checkunknownentities=True, filename='botssys/infile/unitinmessagexml/xml/110412.xml')
+                          checkunknownentities=True, filename='bots/botssys/infile/unitinmessagexml/xml/110412.xml')
 
         #unknown xml element
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='xml', messagetype='testxml',
-                          checkunknownentities=True, filename='botssys/infile/unitinmessagexml/xml/110413.xml')
+                          checkunknownentities=True, filename='bots/botssys/infile/unitinmessagexml/xml/110413.xml')
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='xml', messagetype='testxml',
-                          checkunknownentities=True, filename='botssys/infile/unitinmessagexml/xml/110414.xml')
+                          checkunknownentities=True, filename='bots/botssys/infile/unitinmessagexml/xml/110414.xml')
 
         #2x the same xml attribute
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='xml',
-                          messagetype='testxml', filename='botssys/infile/unitinmessagexml/xml/110415.xml')
+                          messagetype='testxml', filename='bots/botssys/infile/unitinmessagexml/xml/110415.xml')
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='xml', messagetype='testxml',
-                          checkunknownentities=True, filename='botssys/infile/unitinmessagexml/xml/110415.xml')
+                          checkunknownentities=True, filename='bots/botssys/infile/unitinmessagexml/xml/110415.xml')
 
         #messages with all max occurences, use attributes, etc
         in1 = inmessage.parse_edi_file(editype='xml', messagetype='testxml',
-                                       filename='botssys/infile/unitinmessagexml/xml/110416.xml')  # all elements, attributes
+                                       filename='bots/botssys/infile/unitinmessagexml/xml/110416.xml')  # all elements, attributes
 
         #other order of xml elements; should esult in the same node tree
         # as 18., other order of elements
         in1 = inmessage.parse_edi_file(editype='xml', messagetype='testxml',
-                                       filename='botssys/infile/unitinmessagexml/xml/110417.xml')
+                                       filename='bots/botssys/infile/unitinmessagexml/xml/110417.xml')
         in2 = inmessage.parse_edi_file(editype='xml', messagetype='testxml',
-                                       filename='botssys/infile/unitinmessagexml/xml/110418.xml')
+                                       filename='bots/botssys/infile/unitinmessagexml/xml/110418.xml')
         self.failUnless(utilsunit.comparenode(in2.root, in1.root), 'compare')
 
         #??what is tested here
         inn7 = inmessage.parse_edi_file(editype='xml', messagetype='testxml', checkunknownentities=True,
-                                        filename='botssys/infile/unitinmessagexml/xml/110405.xml')  # with <?xml version="1.0" encoding="utf-8"?>
+                                        filename='bots/botssys/infile/unitinmessagexml/xml/110405.xml')  # with <?xml version="1.0" encoding="utf-8"?>
         inn8 = inmessage.parse_edi_file(editype='xml', messagetype='testxmlflatten', checkunknownentities=True,
-                                        filename='botssys/infile/unitinmessagexml/xml/110405.xml')  # with <?xml version="1.0" encoding="utf-8"?>
+                                        filename='bots/botssys/infile/unitinmessagexml/xml/110405.xml')  # with <?xml version="1.0" encoding="utf-8"?>
         self.failUnless(utilsunit.comparenode(inn7.root, inn8.root), 'compare')
 
         #~ #test different file which should give equal results
         in1 = inmessage.parse_edi_file(editype='xmlnocheck', messagetype='xmlnocheck',
-                                       filename='botssys/infile/unitinmessagexml/xml/110403.xml')  # no grammar used
+                                       filename='bots/botssys/infile/unitinmessagexml/xml/110403.xml')  # no grammar used
         in5 = inmessage.parse_edi_file(editype='xmlnocheck', messagetype='xmlnocheck',
-                                       filename='botssys/infile/unitinmessagexml/xml/110404.xml')  # no grammar used
+                                       filename='bots/botssys/infile/unitinmessagexml/xml/110404.xml')  # no grammar used
         in6 = inmessage.parse_edi_file(editype='xmlnocheck', messagetype='xmlnocheck',
-                                       filename='botssys/infile/unitinmessagexml/xml/110405.xml')  # no grammar used
+                                       filename='bots/botssys/infile/unitinmessagexml/xml/110405.xml')  # no grammar used
         # with <?xml version="1.0" encoding="utf-8"?>
         in2 = inmessage.parse_edi_file(editype='xml', messagetype='testxml',
-                                       filename='botssys/infile/unitinmessagexml/xml/110403.xml')
+                                       filename='bots/botssys/infile/unitinmessagexml/xml/110403.xml')
         # without <?xml version="1.0" encoding="utf-8"?>
         in3 = inmessage.parse_edi_file(editype='xml', messagetype='testxml',
-                                       filename='botssys/infile/unitinmessagexml/xml/110404.xml')
+                                       filename='bots/botssys/infile/unitinmessagexml/xml/110404.xml')
         # use cr/lf and whitespace for 'nice' xml
         in4 = inmessage.parse_edi_file(editype='xml', messagetype='testxml',
-                                       filename='botssys/infile/unitinmessagexml/xml/110405.xml')
+                                       filename='bots/botssys/infile/unitinmessagexml/xml/110405.xml')
         self.failUnless(utilsunit.comparenode(in2.root, in1.root), 'compare')
         self.failUnless(utilsunit.comparenode(in2.root, in3.root), 'compare')
         self.failUnless(utilsunit.comparenode(in2.root, in4.root), 'compare')
@@ -148,20 +148,20 @@ class TestInmessage_xml(unittest.TestCase):
 
         #~ #test different file which should give equal results; flattenxml=True,
         in1 = inmessage.parse_edi_file(editype='xmlnocheck', messagetype='xmlnocheck',
-                                       filename='botssys/infile/unitinmessagexml/xml/110403.xml')  # no grammar used
+                                       filename='bots/botssys/infile/unitinmessagexml/xml/110403.xml')  # no grammar used
         in5 = inmessage.parse_edi_file(editype='xmlnocheck', messagetype='xmlnocheck',
-                                       filename='botssys/infile/unitinmessagexml/xml/110404.xml')  # no grammar used
+                                       filename='bots/botssys/infile/unitinmessagexml/xml/110404.xml')  # no grammar used
         in6 = inmessage.parse_edi_file(editype='xmlnocheck', messagetype='xmlnocheck',
-                                       filename='botssys/infile/unitinmessagexml/xml/110405.xml')  # no grammar used
+                                       filename='bots/botssys/infile/unitinmessagexml/xml/110405.xml')  # no grammar used
         # use cr/lf and whitespace for 'nice' xml
         in4 = inmessage.parse_edi_file(editype='xml', messagetype='testxmlflatten',
-                                       filename='botssys/infile/unitinmessagexml/xml/110405.xml')
+                                       filename='bots/botssys/infile/unitinmessagexml/xml/110405.xml')
         # with <?xml version="1.0" encoding="utf-8"?>
         in2 = inmessage.parse_edi_file(editype='xml', messagetype='testxmlflatten',
-                                       filename='botssys/infile/unitinmessagexml/xml/110403.xml')
+                                       filename='bots/botssys/infile/unitinmessagexml/xml/110403.xml')
         # without <?xml version="1.0" encoding="utf-8"?>
         in3 = inmessage.parse_edi_file(editype='xml', messagetype='testxmlflatten',
-                                       filename='botssys/infile/unitinmessagexml/xml/110404.xml')
+                                       filename='bots/botssys/infile/unitinmessagexml/xml/110404.xml')
         self.failUnless(utilsunit.comparenode(in2.root, in1.root), 'compare')
         self.failUnless(utilsunit.comparenode(in2.root, in3.root), 'compare')
         self.failUnless(utilsunit.comparenode(in2.root, in4.root), 'compare')
@@ -459,108 +459,108 @@ class InmessageJson(unittest.TestCase):
 
     def testjsondiv(self):
         self.failUnless(inmessage.parse_edi_file(editype='json', messagetype='testjsonorder01',
-                                                 checkunknownentities=True, filename='botssys/infile/unitinmessagejson/org/130101.json'), 'standaard test')
+                                                 checkunknownentities=True, filename='bots/botssys/infile/unitinmessagejson/org/130101.json'), 'standaard test')
         self.failUnless(inmessage.parse_edi_file(editype='jsonnocheck', messagetype='jsonnocheck',
-                                                 filename='botssys/infile/unitinmessagejson/org/130101.json'), 'standaard test')
+                                                 filename='bots/botssys/infile/unitinmessagejson/org/130101.json'), 'standaard test')
 
         #~ #empty object
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='json', messagetype='testjsonorder01',
-                          checkunknownentities=True, filename='botssys/infile/unitinmessagejson/org/130102.json')
+                          checkunknownentities=True, filename='bots/botssys/infile/unitinmessagejson/org/130102.json')
 
         #unknown field
         self.failUnless(inmessage.parse_edi_file(editype='json', messagetype='testjsonorder01',
-                                                 checkunknownentities=False, filename='botssys/infile/unitinmessagejson/org/130103.json'), 'unknown field')
+                                                 checkunknownentities=False, filename='bots/botssys/infile/unitinmessagejson/org/130103.json'), 'unknown field')
         self.failUnless(inmessage.parse_edi_file(editype='jsonnocheck', messagetype='jsonnocheck',
-                                                 filename='botssys/infile/unitinmessagejson/org/130103.json'), 'unknown field')
+                                                 filename='bots/botssys/infile/unitinmessagejson/org/130103.json'), 'unknown field')
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='json', messagetype='testjsonorder01',
-                          checkunknownentities=True, filename='botssys/infile/unitinmessagejson/org/130103.json')  # unknown field
+                          checkunknownentities=True, filename='bots/botssys/infile/unitinmessagejson/org/130103.json')  # unknown field
 
         #compare standard test with standard est with extra unknown fields and objects: must give same tree:
         in1 = inmessage.parse_edi_file(editype='json', messagetype='testjsonorder01',
-                                       checkunknownentities=True, filename='botssys/infile/unitinmessagejson/org/130101.json')
+                                       checkunknownentities=True, filename='bots/botssys/infile/unitinmessagejson/org/130101.json')
         in2 = inmessage.parse_edi_file(editype='json', messagetype='testjsonorder01',
-                                       checkunknownentities=False, filename='botssys/infile/unitinmessagejson/org/130115.json')
+                                       checkunknownentities=False, filename='bots/botssys/infile/unitinmessagejson/org/130115.json')
         self.failUnless(utilsunit.comparenode(in1.root, in2.root), 'compare')
 
         #numeriek field
         self.failUnless(inmessage.parse_edi_file(editype='json', messagetype='testjsonorder01',
-                                                 checkunknownentities=False, filename='botssys/infile/unitinmessagejson/org/130104.json'), 'numeriek field')
+                                                 checkunknownentities=False, filename='bots/botssys/infile/unitinmessagejson/org/130104.json'), 'numeriek field')
         self.failUnless(inmessage.parse_edi_file(editype='jsonnocheck', messagetype='jsonnocheck',
-                                                 checkunknownentities=False, filename='botssys/infile/unitinmessagejson/org/130104.json'), 'numeriek field')
+                                                 checkunknownentities=False, filename='bots/botssys/infile/unitinmessagejson/org/130104.json'), 'numeriek field')
         self.failUnless(inmessage.parse_edi_file(editype='json', messagetype='testjsonorder01',
-                                                 checkunknownentities=True, filename='botssys/infile/unitinmessagejson/org/130104.json'), 'numeriek field')
+                                                 checkunknownentities=True, filename='bots/botssys/infile/unitinmessagejson/org/130104.json'), 'numeriek field')
 
         self.failUnless(inmessage.parse_edi_file(editype='json', messagetype='testjsonorder01',
-                                                 checkunknownentities=False, filename='botssys/infile/unitinmessagejson/org/130105.json'), 'fucked up')
+                                                 checkunknownentities=False, filename='bots/botssys/infile/unitinmessagejson/org/130105.json'), 'fucked up')
         self.failUnless(inmessage.parse_edi_file(editype='jsonnocheck', messagetype='jsonnocheck',
-                                                 filename='botssys/infile/unitinmessagejson/org/130105.json'), 'fucked up')
+                                                 filename='bots/botssys/infile/unitinmessagejson/org/130105.json'), 'fucked up')
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='json', messagetype='testjsonorder01',
-                          checkunknownentities=True, filename='botssys/infile/unitinmessagejson/org/130105.json')  # fucked up
+                          checkunknownentities=True, filename='bots/botssys/infile/unitinmessagejson/org/130105.json')  # fucked up
 
         self.failUnless(inmessage.parse_edi_file(editype='json', messagetype='testjsonorder01',
-                                                 checkunknownentities=False, filename='botssys/infile/unitinmessagejson/org/130106.json'), 'fucked up')
+                                                 checkunknownentities=False, filename='bots/botssys/infile/unitinmessagejson/org/130106.json'), 'fucked up')
         self.failUnless(inmessage.parse_edi_file(editype='jsonnocheck', messagetype='jsonnocheck',
-                                                 filename='botssys/infile/unitinmessagejson/org/130106.json'), 'fucked up')
+                                                 filename='bots/botssys/infile/unitinmessagejson/org/130106.json'), 'fucked up')
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='json', messagetype='testjsonorder01',
-                          checkunknownentities=True, filename='botssys/infile/unitinmessagejson/org/130106.json')  # fucked up
+                          checkunknownentities=True, filename='bots/botssys/infile/unitinmessagejson/org/130106.json')  # fucked up
 
         self.failUnless(inmessage.parse_edi_file(editype='json', messagetype='testjsonorder01',
-                                                 checkunknownentities=False, filename='botssys/infile/unitinmessagejson/org/130107.json'), 'fucked up')
+                                                 checkunknownentities=False, filename='bots/botssys/infile/unitinmessagejson/org/130107.json'), 'fucked up')
         self.failUnless(inmessage.parse_edi_file(editype='jsonnocheck', messagetype='jsonnocheck',
-                                                 filename='botssys/infile/unitinmessagejson/org/130107.json'), 'fucked up')
+                                                 filename='bots/botssys/infile/unitinmessagejson/org/130107.json'), 'fucked up')
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='json', messagetype='testjsonorder01',
-                          checkunknownentities=True, filename='botssys/infile/unitinmessagejson/org/130107.json')  # fucked up
+                          checkunknownentities=True, filename='bots/botssys/infile/unitinmessagejson/org/130107.json')  # fucked up
 
         #root is list with 3 messagetrees
         inn = inmessage.parse_edi_file(editype='json', messagetype='testjsonorder01',
-                                       checkunknownentities=False, filename='botssys/infile/unitinmessagejson/org/130108.json')
+                                       checkunknownentities=False, filename='bots/botssys/infile/unitinmessagejson/org/130108.json')
         self.assertEqual(len(inn.root.children), 3, 'should deliver 3 messagetrees')
         inn = inmessage.parse_edi_file(editype='jsonnocheck', messagetype='jsonnocheck',
-                                       filename='botssys/infile/unitinmessagejson/org/130108.json')
+                                       filename='bots/botssys/infile/unitinmessagejson/org/130108.json')
         self.assertEqual(len(inn.root.children), 3, 'should deliver 3 messagetrees')
 
         #root is list, but list has a non-object member
         self.failUnless(inmessage.parse_edi_file(editype='json', messagetype='testjsonorder01', checkunknownentities=False,
-                                                 filename='botssys/infile/unitinmessagejson/org/130109.json'), 'root is list, but list has a non-object member')
+                                                 filename='bots/botssys/infile/unitinmessagejson/org/130109.json'), 'root is list, but list has a non-object member')
         self.failUnless(inmessage.parse_edi_file(editype='jsonnocheck', messagetype='jsonnocheck',
-                                                 filename='botssys/infile/unitinmessagejson/org/130109.json'), 'root is list, but list has a non-object member')
+                                                 filename='bots/botssys/infile/unitinmessagejson/org/130109.json'), 'root is list, but list has a non-object member')
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='json', messagetype='testjsonorder01', checkunknownentities=True,
-                          filename='botssys/infile/unitinmessagejson/org/130109.json')  # root is list, but list has a non-object member
+                          filename='bots/botssys/infile/unitinmessagejson/org/130109.json')  # root is list, but list has a non-object member
 
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='json', messagetype='testjsonorder01',
-                          checkunknownentities=False, filename='botssys/infile/unitinmessagejson/org/130110.json')  # too many occurences
+                          checkunknownentities=False, filename='bots/botssys/infile/unitinmessagejson/org/130110.json')  # too many occurences
 
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='json', messagetype='testjsonorder01',
-                          checkunknownentities=False, filename='botssys/infile/unitinmessagejson/org/130111.json')  # ent TEST1 should have a TEST2
+                          checkunknownentities=False, filename='bots/botssys/infile/unitinmessagejson/org/130111.json')  # ent TEST1 should have a TEST2
         self.failUnless(inmessage.parse_edi_file(editype='jsonnocheck', messagetype='jsonnocheck',
-                                                 filename='botssys/infile/unitinmessagejson/org/130111.json'), 'ent TEST1 should have a TEST2')
+                                                 filename='bots/botssys/infile/unitinmessagejson/org/130111.json'), 'ent TEST1 should have a TEST2')
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='json', messagetype='testjsonorder01',
-                          checkunknownentities=True, filename='botssys/infile/unitinmessagejson/org/130111.json')  # ent TEST1 should have a TEST2
+                          checkunknownentities=True, filename='bots/botssys/infile/unitinmessagejson/org/130111.json')  # ent TEST1 should have a TEST2
 
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='json', messagetype='testjsonorder01',
-                          checkunknownentities=False, filename='botssys/infile/unitinmessagejson/org/130112.json')  # ent TEST1 has a TEST2
+                          checkunknownentities=False, filename='bots/botssys/infile/unitinmessagejson/org/130112.json')  # ent TEST1 has a TEST2
         self.failUnless(inmessage.parse_edi_file(editype='jsonnocheck', messagetype='jsonnocheck',
-                                                 filename='botssys/infile/unitinmessagejson/org/130112.json'), 'ent TEST1 has a TEST2')
+                                                 filename='bots/botssys/infile/unitinmessagejson/org/130112.json'), 'ent TEST1 has a TEST2')
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='json', messagetype='testjsonorder01',
-                          checkunknownentities=True, filename='botssys/infile/unitinmessagejson/org/130112.json')  # ent TEST1 has a TEST2
+                          checkunknownentities=True, filename='bots/botssys/infile/unitinmessagejson/org/130112.json')  # ent TEST1 has a TEST2
 
         #unknown entries
         inn = inmessage.parse_edi_file(editype='json', messagetype='testjsonorder01',
-                                       checkunknownentities=False, filename='botssys/infile/unitinmessagejson/org/130113.json')
+                                       checkunknownentities=False, filename='bots/botssys/infile/unitinmessagejson/org/130113.json')
 
         #empty file
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='json', messagetype='testjsonorder01',
-                          checkunknownentities=False, filename='botssys/infile/unitinmessagejson/org/130114.json')  # empty file
+                          checkunknownentities=False, filename='bots/botssys/infile/unitinmessagejson/org/130114.json')  # empty file
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='jsonnocheck',
-                          messagetype='jsonnocheck', filename='botssys/infile/unitinmessagejson/org/130114.json')  # empty file
+                          messagetype='jsonnocheck', filename='bots/botssys/infile/unitinmessagejson/org/130114.json')  # empty file
 
         #numeric key
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='json', messagetype='testjsonorder01',
-                          checkunknownentities=False, filename='botssys/infile/unitinmessagejson/org/130116.json')
+                          checkunknownentities=False, filename='bots/botssys/infile/unitinmessagejson/org/130116.json')
 
         #key is list
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='json', messagetype='testjsonorder01',
-                          checkunknownentities=False, filename='botssys/infile/unitinmessagejson/org/130117.json')
+                          checkunknownentities=False, filename='bots/botssys/infile/unitinmessagejson/org/130117.json')
 
     def testinisoutjson01(self):
         filein = 'botssys/infile/unitinmessagejson/org/inisout01.json'
@@ -616,116 +616,116 @@ class TestInmessage(unittest.TestCase):
     def testEdifact0401(self):
         ''' 0401	Errors in records'''
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='edifact',
-                          messagetype='edifact', filename='botssys/infile/unitinmessageedifact/0401/040101.edi')
+                          messagetype='edifact', filename='bots/botssys/infile/unitinmessageedifact/0401/040101.edi')
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='edifact',
-                          messagetype='edifact', filename='botssys/infile/unitinmessageedifact/0401/040102.edi')
+                          messagetype='edifact', filename='bots/botssys/infile/unitinmessageedifact/0401/040102.edi')
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='edifact',
-                          messagetype='edifact', filename='botssys/infile/unitinmessageedifact/0401/040103.edi')
+                          messagetype='edifact', filename='bots/botssys/infile/unitinmessageedifact/0401/040103.edi')
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='edifact',
-                          messagetype='edifact', filename='botssys/infile/unitinmessageedifact/0401/040104.edi')
+                          messagetype='edifact', filename='bots/botssys/infile/unitinmessageedifact/0401/040104.edi')
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='edifact',
-                          messagetype='edifact', filename='botssys/infile/unitinmessageedifact/0401/040105.edi')
+                          messagetype='edifact', filename='bots/botssys/infile/unitinmessageedifact/0401/040105.edi')
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='edifact',
-                          messagetype='edifact', filename='botssys/infile/unitinmessageedifact/0401/040106.edi')
+                          messagetype='edifact', filename='bots/botssys/infile/unitinmessageedifact/0401/040106.edi')
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='edifact',
-                          messagetype='edifact', filename='botssys/infile/unitinmessageedifact/0401/040107.edi')
+                          messagetype='edifact', filename='bots/botssys/infile/unitinmessageedifact/0401/040107.edi')
 
     def testedifact0403(self):
         #~ #test charsets
         #~ self.assertRaises(botslib.MessageError,inmessage.parse_edi_file,editype='edifact',messagetype='edifact',filename='botssys/infile/unitinmessageedifact/0403/040301.edi')   #UNOA-regular OK for UNOA as UNOC
         #~ self.assertRaises(botslib.MessageError,inmessage.parse_edi_file,editype='edifact',messagetype='edifact',filename='botssys/infile/unitinmessageedifact/0403/040302F-generated.edi')    #UNOA-regular  OK for UNOA as UNOC
         in0 = inmessage.parse_edi_file(editype='edifact', messagetype='edifact',
-                                       filename='botssys/infile/unitinmessageedifact/0403/040303.edi')  # UNOA-regular  also UNOA-strict
+                                       filename='bots/botssys/infile/unitinmessageedifact/0403/040303.edi')  # UNOA-regular  also UNOA-strict
         in1 = inmessage.parse_edi_file(editype='edifact', messagetype='edifact',
-                                       filename='botssys/infile/unitinmessageedifact/0403/040306.edi')  # UNOA regular
+                                       filename='bots/botssys/infile/unitinmessageedifact/0403/040306.edi')  # UNOA regular
         in2 = inmessage.parse_edi_file(editype='edifact', messagetype='edifact',
-                                       filename='botssys/infile/unitinmessageedifact/0403/T0000000005.edi')  # UNOA regular
+                                       filename='bots/botssys/infile/unitinmessageedifact/0403/T0000000005.edi')  # UNOA regular
         in3 = inmessage.parse_edi_file(editype='edifact', messagetype='edifact',
-                                       filename='botssys/infile/unitinmessageedifact/0403/T0000000006.edi')  # UNOA regular
+                                       filename='bots/botssys/infile/unitinmessageedifact/0403/T0000000006.edi')  # UNOA regular
         for in1node, in2node, in3node in zip(in1.nextmessage(), in2.nextmessage(), in3.nextmessage()):
             self.failUnless(utilsunit.comparenode(in1node.root, in2node.root), 'compare')
             self.failUnless(utilsunit.comparenode(in1node.root, in3node.root), 'compare')
 
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='edifact', messagetype='edifact',
-                          filename='botssys/infile/unitinmessageedifact/0403/040305.edi')  # needs UNOA regular
+                          filename='bots/botssys/infile/unitinmessageedifact/0403/040305.edi')  # needs UNOA regular
         #~ in1= inmessage.parse_edi_file(editype='edifact',messagetype='edifact',filename='botssys/infile/unitinmessageedifact/0403/040305.edi') #needs UNOA extended; add (and delete later)
 
         in7 = inmessage.parse_edi_file(editype='edifact', messagetype='edifact',
-                                       filename='botssys/infile/unitinmessageedifact/0403/040304.edi')  # UNOB-regular
+                                       filename='bots/botssys/infile/unitinmessageedifact/0403/040304.edi')  # UNOB-regular
         in5 = inmessage.parse_edi_file(editype='edifact', messagetype='edifact',
-                                       filename='botssys/infile/unitinmessageedifact/0403/T0000000008.edi')  # UNOB regular
+                                       filename='bots/botssys/infile/unitinmessageedifact/0403/T0000000008.edi')  # UNOB regular
         in4 = inmessage.parse_edi_file(editype='edifact', messagetype='edifact',
-                                       filename='botssys/infile/unitinmessageedifact/0403/T0000000007-generated.edi')  # UNOB regular
+                                       filename='bots/botssys/infile/unitinmessageedifact/0403/T0000000007-generated.edi')  # UNOB regular
 
         in6 = inmessage.parse_edi_file(editype='edifact', messagetype='edifact',
-                                       filename='botssys/infile/unitinmessageedifact/0403/T0000000009.edi')  # UNOC
+                                       filename='bots/botssys/infile/unitinmessageedifact/0403/T0000000009.edi')  # UNOC
 
     def testedifact0404(self):
         #envelope tests
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='edifact',
-                          messagetype='edifact', filename='botssys/infile/unitinmessageedifact/0404/040401.edi')
+                          messagetype='edifact', filename='bots/botssys/infile/unitinmessageedifact/0404/040401.edi')
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='edifact',
-                          messagetype='edifact', filename='botssys/infile/unitinmessageedifact/0404/040402.edi')
+                          messagetype='edifact', filename='bots/botssys/infile/unitinmessageedifact/0404/040402.edi')
         self.failUnless(inmessage.parse_edi_file(editype='edifact', messagetype='edifact',
-                                                 filename='botssys/infile/unitinmessageedifact/0404/040403.edi'), 'standaard test')
+                                                 filename='bots/botssys/infile/unitinmessageedifact/0404/040403.edi'), 'standaard test')
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='edifact',
-                          messagetype='edifact', filename='botssys/infile/unitinmessageedifact/0404/040404.edi')
+                          messagetype='edifact', filename='bots/botssys/infile/unitinmessageedifact/0404/040404.edi')
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='edifact',
-                          messagetype='edifact', filename='botssys/infile/unitinmessageedifact/0404/040405.edi')
+                          messagetype='edifact', filename='bots/botssys/infile/unitinmessageedifact/0404/040405.edi')
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='edifact',
-                          messagetype='edifact', filename='botssys/infile/unitinmessageedifact/0404/040406.edi')
+                          messagetype='edifact', filename='bots/botssys/infile/unitinmessageedifact/0404/040406.edi')
         # self.assertRaises(botslib.InMessageError,inmessage.parse_edi_file,editype='edifact',messagetype='edifact',filename='botssys/infile/unitinmessageedifact/0404/040407.edi')
         # #syntax version '0'; is not checked anymore
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='edifact',
-                          messagetype='edifact', filename='botssys/infile/unitinmessageedifact/0404/040408.edi')
+                          messagetype='edifact', filename='bots/botssys/infile/unitinmessageedifact/0404/040408.edi')
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='edifact',
-                          messagetype='edifact', filename='botssys/infile/unitinmessageedifact/0404/040409.edi')
+                          messagetype='edifact', filename='bots/botssys/infile/unitinmessageedifact/0404/040409.edi')
         self.failUnless(inmessage.parse_edi_file(editype='edifact', messagetype='edifact',
-                                                 filename='botssys/infile/unitinmessageedifact/0404/040410.edi'), 'standaard test')
+                                                 filename='bots/botssys/infile/unitinmessageedifact/0404/040410.edi'), 'standaard test')
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='edifact',
-                          messagetype='edifact', filename='botssys/infile/unitinmessageedifact/0404/040411.edi')
+                          messagetype='edifact', filename='bots/botssys/infile/unitinmessageedifact/0404/040411.edi')
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='edifact',
-                          messagetype='edifact', filename='botssys/infile/unitinmessageedifact/0404/040412.edi')
+                          messagetype='edifact', filename='bots/botssys/infile/unitinmessageedifact/0404/040412.edi')
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='edifact',
-                          messagetype='edifact', filename='botssys/infile/unitinmessageedifact/0404/040413.edi')
+                          messagetype='edifact', filename='bots/botssys/infile/unitinmessageedifact/0404/040413.edi')
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='edifact',
-                          messagetype='edifact', filename='botssys/infile/unitinmessageedifact/0404/040414.edi')
+                          messagetype='edifact', filename='bots/botssys/infile/unitinmessageedifact/0404/040414.edi')
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='edifact',
-                          messagetype='edifact', filename='botssys/infile/unitinmessageedifact/0404/040415.edi')
+                          messagetype='edifact', filename='bots/botssys/infile/unitinmessageedifact/0404/040415.edi')
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='edifact',
-                          messagetype='edifact', filename='botssys/infile/unitinmessageedifact/0404/040416.edi')
+                          messagetype='edifact', filename='bots/botssys/infile/unitinmessageedifact/0404/040416.edi')
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='edifact',
-                          messagetype='edifact', filename='botssys/infile/unitinmessageedifact/0404/040417.edi')
+                          messagetype='edifact', filename='bots/botssys/infile/unitinmessageedifact/0404/040417.edi')
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='edifact',
-                          messagetype='edifact', filename='botssys/infile/unitinmessageedifact/0404/040418.edi')
+                          messagetype='edifact', filename='bots/botssys/infile/unitinmessageedifact/0404/040418.edi')
 
     def testedifact0407(self):
         #lex test with characters in strange places
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='edifact',
-                          messagetype='edifact', filename='botssys/infile/unitinmessageedifact/0407/040701.edi')
+                          messagetype='edifact', filename='bots/botssys/infile/unitinmessageedifact/0407/040701.edi')
         self.failUnless(inmessage.parse_edi_file(editype='edifact', messagetype='edifact',
-                                                 filename='botssys/infile/unitinmessageedifact/0407/040702.edi'), 'standaard test')
+                                                 filename='bots/botssys/infile/unitinmessageedifact/0407/040702.edi'), 'standaard test')
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='edifact',
-                          messagetype='edifact', filename='botssys/infile/unitinmessageedifact/0407/040703.edi')
+                          messagetype='edifact', filename='bots/botssys/infile/unitinmessageedifact/0407/040703.edi')
         self.assertRaises(botslib.MessageError, inmessage.parse_edi_file, editype='edifact',
-                          messagetype='edifact', filename='botssys/infile/unitinmessageedifact/0407/040704.edi')
+                          messagetype='edifact', filename='bots/botssys/infile/unitinmessageedifact/0407/040704.edi')
         self.failUnless(inmessage.parse_edi_file(editype='edifact', messagetype='edifact',
-                                                 filename='botssys/infile/unitinmessageedifact/0407/040705.edi'), 'standaard test')
+                                                 filename='bots/botssys/infile/unitinmessageedifact/0407/040705.edi'), 'standaard test')
         self.failUnless(inmessage.parse_edi_file(editype='edifact', messagetype='edifact',
-                                                 filename='botssys/infile/unitinmessageedifact/0407/040706.edi'), 'UNOA Crtl-Z at end')
+                                                 filename='bots/botssys/infile/unitinmessageedifact/0407/040706.edi'), 'UNOA Crtl-Z at end')
         self.failUnless(inmessage.parse_edi_file(editype='edifact', messagetype='edifact',
-                                                 filename='botssys/infile/unitinmessageedifact/0407/040707.edi'), 'UNOB Crtl-Z at end')
+                                                 filename='bots/botssys/infile/unitinmessageedifact/0407/040707.edi'), 'UNOB Crtl-Z at end')
         self.failUnless(inmessage.parse_edi_file(editype='edifact', messagetype='edifact',
-                                                 filename='botssys/infile/unitinmessageedifact/0407/040708.edi'), 'UNOC Crtl-Z at end')
+                                                 filename='bots/botssys/infile/unitinmessageedifact/0407/040708.edi'), 'UNOC Crtl-Z at end')
 
     def testedifact0408(self):
         #differentenvelopingsamecontent: 1rst UNH per UNB, 2nd has 2 UNB for all UNH's, 3rd has UNG-UNE
         in1 = inmessage.parse_edi_file(editype='edifact', messagetype='edifact',
-                                       filename='botssys/infile/unitinmessageedifact/0408/040801.edi')
+                                       filename='bots/botssys/infile/unitinmessageedifact/0408/040801.edi')
         in2 = inmessage.parse_edi_file(editype='edifact', messagetype='edifact',
-                                       filename='botssys/infile/unitinmessageedifact/0408/040802.edi')
+                                       filename='bots/botssys/infile/unitinmessageedifact/0408/040802.edi')
         in3 = inmessage.parse_edi_file(editype='edifact', messagetype='edifact',
-                                       filename='botssys/infile/unitinmessageedifact/0408/040803.edi')
+                                       filename='bots/botssys/infile/unitinmessageedifact/0408/040803.edi')
         for in1node, in2node, in3node in zip(in1.nextmessage(), in2.nextmessage(), in3.nextmessage()):
             self.failUnless(utilsunit.comparenode(in1node.root, in2node.root), 'compare')
             self.failUnless(utilsunit.comparenode(in1node.root, in3node.root), 'compare')
