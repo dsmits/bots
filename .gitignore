@@ -107,3 +107,4 @@ coverage.xml
 # virtualenv
 venv/
 ENV/
+/plugin.zip

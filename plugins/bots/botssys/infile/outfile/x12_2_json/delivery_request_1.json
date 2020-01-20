@@ -1,0 +1,15 @@
+{
+  "deliveryRequest": {
+    "parties": [
+      {
+        "name": "GRITS BREAD COMPANY"
+      },
+      {
+        "name": "PINK BUNNY BREAD"
+      },
+      {
+        "name": "ONTARIO"
+      }
+    ]
+  }
+}
