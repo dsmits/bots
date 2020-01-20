@@ -1,8 +1,6 @@
 from bots.botsconfig import *
-from .envelope import recorddefs,structure,nextmessage
+from .envelope import recorddefs, structure, nextmessage
 
-
-syntax = { 
-        'version'    :  '00403',    #only for sending
-        }
-
+syntax = {
+    'version': '00403',  # only for sending
+}

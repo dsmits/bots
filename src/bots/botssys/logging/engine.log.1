@@ -1,0 +1,27 @@
+20200120 13:21:32 INFO     engine : served at port: "9000".
+20200120 13:21:32 INFO     engine : platform: "Linux-5.0.0-37-generic-x86_64-with-debian-buster-sid".
+20200120 13:21:32 INFO     engine : machine: "x86_64".
+20200120 13:21:32 INFO     engine : python version: "3.4.5".
+20200120 13:21:32 INFO     engine : django version: "(1, 7, 11, 'final', 0)".
+20200120 13:21:32 INFO     engine : bots version: "1.0".
+20200120 13:21:32 INFO     engine : bots installation path: "/home/djura/projects/bots/src/bots".
+20200120 13:21:32 INFO     engine : config path: "/home/djura/projects/bots/src/bots/config".
+20200120 13:21:32 INFO     engine : botssys path: "/home/djura/projects/bots/src/bots/botssys".
+20200120 13:21:32 INFO     engine : usersys path: "/home/djura/projects/bots/src/bots/usersys".
+20200120 13:21:32 INFO     engine : DATABASE_ENGINE: "django.db.backends.postgresql_psycopg2".
+20200120 13:21:32 INFO     engine : DATABASE_NAME: "botsdb".
+20200120 13:21:32 INFO     engine : DATABASE_USER: "bots".
+20200120 13:21:32 INFO     engine : DATABASE_HOST: "db".
+20200120 13:21:32 INFO     engine : DATABASE_PORT: "5432".
+20200120 13:21:32 INFO     engine : DATABASE_OPTIONS: "{}".
+20200120 13:21:32 ERROR    engine : Could not connect to database. Database settings are in bots/config/settings.py. Error: "could not translate host name "db" to address: Name or service not known
+".
+Traceback (most recent call last):
+  File "/home/djura/projects/bots/src/bots/engine.py", line 142, in start
+    botsinit.connect()
+  File "/home/djura/projects/bots/src/bots/botsinit.py", line 202, in connect
+    connection_factory=psycopg2.extras.DictConnection)
+  File "/home/djura/projects/bots/venv/lib/python3.4/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "db" to address: Name or service not known
+

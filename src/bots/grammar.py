@@ -22,6 +22,9 @@ def grammarread(editype, grammarname, typeofgrammarfile):
         - partners: only syntax is read
         grammars are imported from usersys/<'typeofgrammarfile'>/<editype>/<grammarname>.
     '''
+
+    print('Reading grammar for editype: {editype}, grammar name: {grammarname}, type file {typeofgrammarfile}'
+          .format(editype, grammarname, typeofgrammarfile))
     try:
         classtocall = globals()[editype]
     except KeyError:
