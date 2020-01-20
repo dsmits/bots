@@ -9,6 +9,8 @@ services:
       dockerfile: ./compose/bots_py34/Dockerfile
     ports:
       - 9000:9000
+    environment:
+      DB_HOST: db
 
   db:
     image: postgres
