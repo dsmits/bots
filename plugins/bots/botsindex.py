@@ -33,6 +33,6 @@ plugins = [
     {'plugintype': 'routes', 'active': False, 'alt': '', 'defer': False, 'desc': '', 'fromchannel': 'x12_2_json_in',
      'fromeditype': 'x12', 'frommessagetype': 'x12_one2one', 'frompartner': None, 'frompartner_tochannel': None,
      'idroute': 'x12_2_json', 'notindefaultrun': False, 'rsrv1': None, 'rsrv2': None, 'seq': 1, 'testindicator': '',
-     'tochannel': 'x12_2_json_out', 'toeditype': 'json', 'tomessagetype': 'deliveryrequestx12_2_json', 'topartner': None,
+     'tochannel': 'x12_2_json_out', 'toeditype': 'json', 'tomessagetype': 'json_delivery_request', 'topartner': None,
      'topartner_tochannel': None, 'translateind': 1, 'zip_incoming': None, 'zip_outgoing': None},
 ]
