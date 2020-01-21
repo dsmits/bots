@@ -1,35 +1,36 @@
-20200120 13:21:45 INFO     engine : served at port: "9000".
-20200120 13:21:45 INFO     engine : platform: "Linux-5.0.0-37-generic-x86_64-with-debian-buster-sid".
-20200120 13:21:45 INFO     engine : machine: "x86_64".
-20200120 13:21:45 INFO     engine : python version: "3.4.5".
-20200120 13:21:45 INFO     engine : django version: "(1, 7, 11, 'final', 0)".
-20200120 13:21:45 INFO     engine : bots version: "1.0".
-20200120 13:21:45 INFO     engine : bots installation path: "/home/djura/projects/bots/src/bots".
-20200120 13:21:45 INFO     engine : config path: "/home/djura/projects/bots/src/bots/config".
-20200120 13:21:45 INFO     engine : botssys path: "/home/djura/projects/bots/src/bots/botssys".
-20200120 13:21:45 INFO     engine : usersys path: "/home/djura/projects/bots/src/bots/usersys".
-20200120 13:21:45 INFO     engine : DATABASE_ENGINE: "django.db.backends.postgresql_psycopg2".
-20200120 13:21:45 INFO     engine : DATABASE_NAME: "botsdb".
-20200120 13:21:45 INFO     engine : DATABASE_USER: "bots".
-20200120 13:21:45 INFO     engine : DATABASE_HOST: "localhost".
-20200120 13:21:45 INFO     engine : DATABASE_PORT: "5432".
-20200120 13:21:45 INFO     engine : DATABASE_OPTIONS: "{}".
-20200120 13:21:45 INFO     engine : Connected to database.
-20200120 13:21:45 DEBUG    engine : No import of module "/home/djura/projects/bots/src/bots/usersys/routescripts/botsengine": No module named 'bots.usersys.routescripts.botsengine'.
-20200120 13:21:45 INFO     engine : This run is an acceptance test - as indicated in option "runacceptancetest" in bots.ini.
-20200120 13:21:45 DEBUG    engine : No import of module "/home/djura/projects/bots/src/bots/usersys/routescripts/bots_acceptancetest": No module named 'bots.usersys.routescripts.bots_acceptancetest'.
-20200120 13:21:45 INFO     engine : In acceptance test there is no script file "bots_acceptancetest.py" to check the results of the acceptance test.
-20200120 13:21:45 INFO     engine : Run "new".
-20200120 13:21:45 INFO     engine : Run active routes from database that are in default run: "['x12_2_json']".
-20200120 13:21:45 DEBUG    engine : No import of module "/home/djura/projects/bots/src/bots/usersys/routescripts/x12_2_json": No module named 'bots.usersys.routescripts.x12_2_json'.
-20200120 13:21:45 INFO     engine : Running route x12_2_json 1
-20200120 13:21:45 DEBUG    engine : Start communication channel "x12_2_json_in" type file in.
-20200120 13:21:45 DEBUG    engine : Channel "x12_2_json_in" adapted for acceptance test: type "file", testpath "".
-20200120 13:21:45 DEBUG    engine : No import of module "/home/djura/projects/bots/src/bots/usersys/communicationscripts/x12_2_json_in": No module named 'bots.usersys.communicationscripts.x12_2_json_in'.
-20200120 13:21:45 DEBUG    engine : Finished communication channel "x12_2_json_in" type file in.
-20200120 13:21:45 DEBUG    engine : No import of module "/home/djura/projects/bots/src/bots/usersys/mappings/translation": No module named 'bots.usersys.mappings.translation'.
-20200120 13:21:45 DEBUG    engine : Finished route x12_2_json 1
-20200120 13:21:45 INFO     engine : Bots Report; type: new, time: 2020-01-20 12:21:45
+20200120 17:41:17 INFO     engine : served at port: "9000".
+20200120 17:41:17 INFO     engine : platform: "Linux-5.3.0-26-generic-x86_64-with-debian-buster-sid".
+20200120 17:41:17 INFO     engine : machine: "x86_64".
+20200120 17:41:17 INFO     engine : python version: "3.4.5".
+20200120 17:41:17 INFO     engine : django version: "(1, 7, 11, 'final', 0)".
+20200120 17:41:17 INFO     engine : bots version: "1.0".
+20200120 17:41:17 INFO     engine : bots installation path: "/home/djura/projects/bots/src/bots".
+20200120 17:41:17 INFO     engine : config path: "/home/djura/projects/bots/src/bots/config".
+20200120 17:41:17 INFO     engine : botssys path: "/home/djura/projects/bots/src/bots/botssys".
+20200120 17:41:17 INFO     engine : usersys path: "/home/djura/projects/bots/plugins/bots/usersys".
+20200120 17:41:17 INFO     engine : DATABASE_ENGINE: "django.db.backends.postgresql_psycopg2".
+20200120 17:41:17 INFO     engine : DATABASE_NAME: "botsdb".
+20200120 17:41:17 INFO     engine : DATABASE_USER: "bots".
+20200120 17:41:17 INFO     engine : DATABASE_HOST: "localhost".
+20200120 17:41:17 INFO     engine : DATABASE_PORT: "5432".
+20200120 17:41:17 INFO     engine : DATABASE_OPTIONS: "{}".
+20200120 17:41:17 INFO     engine : Connected to database.
+20200120 17:41:17 DEBUG    engine : No import of module "/home/djura/projects/bots/plugins/bots/usersys/routescripts/botsengine": No module named 'usersys.routescripts.botsengine'.
+20200120 17:41:17 INFO     engine : This run is an acceptance test - as indicated in option "runacceptancetest" in bots.ini.
+20200120 17:41:17 DEBUG    engine : Imported "/home/djura/projects/bots/plugins/bots/usersys/routescripts/bots_acceptancetest".
+20200120 17:41:17 DEBUG    engine : Run userscript "pretest" in "/home/djura/projects/bots/plugins/bots/usersys/routescripts/bots_acceptancetest".
+20200120 17:41:17 INFO     engine : Run "new".
+20200120 17:41:17 INFO     engine : Run active routes from database that are in default run: "['x12_2_json']".
+20200120 17:41:17 DEBUG    engine : No import of module "/home/djura/projects/bots/plugins/bots/usersys/routescripts/x12_2_json": No module named 'usersys.routescripts.x12_2_json'.
+20200120 17:41:17 INFO     engine : Running route x12_2_json 1
+20200120 17:41:17 DEBUG    engine : Start communication channel "x12_2_json_in" type file in.
+20200120 17:41:17 DEBUG    engine : Channel "x12_2_json_in" adapted for acceptance test: type "file", testpath "".
+20200120 17:41:17 DEBUG    engine : No import of module "/home/djura/projects/bots/plugins/bots/usersys/communicationscripts/x12_2_json_in": No module named 'usersys.communicationscripts'.
+20200120 17:41:17 DEBUG    engine : Finished communication channel "x12_2_json_in" type file in.
+20200120 17:41:17 DEBUG    engine : No import of module "/home/djura/projects/bots/plugins/bots/usersys/mappings/translation": No module named 'usersys.mappings.translation'.
+20200120 17:41:17 DEBUG    engine : Finished route x12_2_json 1
+20200120 17:41:18 INFO     engine : Bots Report; type: new, time: 2020-01-20 16:41:17
     0 files received/processed in run.
     0 files send in run.
 
+20200120 17:41:18 DEBUG    engine : Run userscript "posttest" in "/home/djura/projects/bots/plugins/bots/usersys/routescripts/bots_acceptancetest".
